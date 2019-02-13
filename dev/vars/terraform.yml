@@ -11,7 +11,7 @@ secret_key: ((tf/secret-access-key))
 ssl_cert: |
   ((tf/sslcert.certificate))
 ssl_private_key: |
-  ((tf/sslcert.certificate))
+  ((tf/sslcert.private_key))
 tags:
 - Team: Dev
 vpc_cidr: 10.2.0.0/16
