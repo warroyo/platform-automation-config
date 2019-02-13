@@ -1,0 +1,17 @@
+access_key: ((tf/access-key))
+availability_zones:
+- us-west-2a
+- us-west-2b
+- us-west-2c
+dns_suffix: aws.warroyo.com
+env_name: dev
+ops_manager_vm: false
+region: us-west-2
+secret_key: ((tf/secret-access-key))
+ssl_cert: |
+  ((tf/sslcert.certificate))
+ssl_private_key: |
+  ((tf/sslcert.certificate))
+tags:
+- Team: Dev
+vpc_cidr: 10.2.0.0/16
