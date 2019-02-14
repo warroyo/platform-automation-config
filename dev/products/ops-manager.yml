@@ -1,0 +1,18 @@
+---
+
+# Product: OpsMan
+
+opsman-configuration:
+  aws:
+    access_key_id: ((aws.aws_access_key))
+    secret_access_key: ((aws.aws_secret_access_key))
+    region: ((aws.region))
+    vm_name: ((aws.vm_name))                         # default: OpsManager-vm
+    boot_disk_size: ((aws.boot_disk_size))                               # default 200
+    vpc_subnet_id: ((aws.subnet_id))
+    security_group_id: ((aws.security_group_id))
+    key_pair_name: ((aws.key_pair_name))
+    iam_instance_profile_name: ((aws.iam_profile))
+    instance_type: ((aws.instance_type))
+    # At least one IP address (public or private) needs to be assigned to the VM.
+    public_ip: ((aws.public_ip))
