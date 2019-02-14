@@ -5,7 +5,7 @@ availability_zones:
 - us-west-2c
 dns_suffix: aws.warroyo.com
 env_name: dev
-ops_manager_vm: false
+ops_manager_vm: "false"
 ops_manager_ami: ami-0204a7e472bd82d0e
 region: us-west-2
 secret_key: ((tf/secret-access-key))
