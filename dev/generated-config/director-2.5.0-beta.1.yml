@@ -107,7 +107,7 @@ properties-configuration:
     post_deploy_enabled: true
     resurrector_enabled: true
     retry_bosh_deploys: true
-    skip_director_drain: false
+    skip_director_drain: true
   dns_configuration:
     excluded_recursors: []
     handlers: []
