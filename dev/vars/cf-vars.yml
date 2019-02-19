@@ -30,7 +30,7 @@ cf:
       additional_networks: []
     control:
       instances: automatic
-      elb_names: ["dev-ssh-tg"]
+      elb_names: ["nlb:dev-ssh-tg"]
     database:
       instances: automatic
     ha_proxy:
@@ -39,7 +39,7 @@ cf:
       instances: 0
     router:
       instances: automatic
-      elb_names: ["dev-web-tg-80","dev-web-tg-443"]
+      elb_names: ["nlb:dev-web-tg-80","nlb:dev-web-tg-443"]
     tcp_router:
       instances: 0
 
