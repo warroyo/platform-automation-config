@@ -2,6 +2,8 @@ product-name: cf
 product-properties:
   .cloud_controller.allow_app_ssh_access:
     value: true
+  .cloud_controller.apps_domain:
+    value: apps.dev.aws.warroyo.com
   .cloud_controller.default_app_memory:
     value: 1024
   .cloud_controller.default_app_ssh_access:
@@ -25,12 +27,14 @@ product-properties:
     value: true
   .cloud_controller.staging_timeout_in_seconds:
     value: 900
+  .cloud_controller.system_domain:
+    value: sys.dev.aws.warroyo.com
   .diego_brain.starting_container_count_maximum:
     value: 200
   .doppler.message_drain_buffer_size:
     value: 10000
   .ha_proxy.skip_cert_verify:
-    value: false
+    value: true
   .mysql.cli_history:
     value: true
   .mysql.max_connections:
@@ -41,6 +45,8 @@ product-properties:
     value: false
   .mysql_monitor.poll_frequency:
     value: 30
+  .mysql_monitor.recipient_email:
+    value: warroyo@pivotal.io
   .mysql_monitor.write_read_delay:
     value: 20
   .mysql_proxy.shutdown_delay:
@@ -104,6 +110,13 @@ product-properties:
   .properties.credhub_hsm_provider_partition_password:
     value:
       secret: ((properties_credhub_hsm_provider_partition_password.secret))
+  .properties.credhub_key_encryption_passwords:
+    value:
+    - key:
+        secret: ((properties_credhub_key_encryption_passwords_0_key.secret))
+      name: encrypt
+      primary: true
+      provider: internal
   .properties.diego_database_max_open_connections:
     value: 100
   .properties.diego_log_timestamp_format:
@@ -125,7 +138,7 @@ product-properties:
   .properties.haproxy_client_cert_validation:
     value: none
   .properties.haproxy_forward_tls:
-    value: enable
+    value: disable
   .properties.haproxy_hsts_support:
     value: disable
   .properties.haproxy_max_buffer_size:
@@ -134,6 +147,8 @@ product-properties:
     value: DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384
   .properties.locket_database_max_open_connections:
     value: 200
+  .properties.logger_endpoint_port:
+    value: 4443
   .properties.metric_registrar_blacklisted_tags:
     value: deployment,job,index,id
   .properties.metric_registrar_enabled:
@@ -144,6 +159,12 @@ product-properties:
     value: enable
   .properties.mysql_activity_logging.enable.audit_logging_events:
     value: connect,query
+  .properties.networking_poe_ssl_certs:
+    value:
+    - certificate:
+        cert_pem: ((properties_networking_poe_ssl_certs_0_certificate.cert_pem))
+        private_key_pem: ((properties_networking_poe_ssl_certs_0_certificate.private_key_pem))
+      name: cert
   .properties.networkpolicyserver_database_max_open_connections:
     value: 200
   .properties.networkpolicyserverinternal_database_max_open_connections:
@@ -188,7 +209,9 @@ product-properties:
   .properties.saml_signature_algorithm:
     value: SHA256
   .properties.secure_service_instance_credentials:
-    value: false
+    value: true
+  .properties.security_acknowledgement:
+    value: x
   .properties.silk_database_max_open_connections:
     value: 200
   .properties.smoke_tests:
@@ -279,63 +302,73 @@ product-properties:
     value:
       secret: ((uaa_service_provider_key_password.secret))
 network-properties:
-  network: null
-  other_availability_zones: []
-  singleton_availability_zone: null
+  network:
+    name: pas
+  other_availability_zones:
+  - name: us-west-2a
+  - name: us-west-2b
+  - name: us-west-2c
+  singleton_availability_zone:
+    name: us-west-2a
 resource-config:
   backup_restore:
-    instances: automatic
+    instances: 0
     persistent_disk:
       size_mb: automatic
     instance_type:
       id: automatic
-    internet_connected: false
+    internet_connected: true
   blobstore:
     instances: automatic
     persistent_disk:
       size_mb: automatic
     instance_type:
       id: automatic
-    internet_connected: false
+    internet_connected: true
   compute:
     instances: automatic
     instance_type:
       id: automatic
-    internet_connected: false
+    internet_connected: true
   control:
     instances: automatic
     instance_type:
       id: automatic
-    internet_connected: false
+    internet_connected: true
+    elb_names:
+    - dev-ssh-tg
   database:
     instances: automatic
     persistent_disk:
       size_mb: automatic
     instance_type:
       id: automatic
-    internet_connected: false
+    internet_connected: true
   ha_proxy:
     instances: automatic
     instance_type:
       id: automatic
-    internet_connected: false
+    internet_connected: true
   mysql_monitor:
     instances: automatic
     instance_type:
       id: automatic
-    internet_connected: false
+    internet_connected: true
   router:
     instances: automatic
     instance_type:
       id: automatic
-    internet_connected: false
+    internet_connected: true
+    elb_names:
+    - dev-web-tg-80
+    - dev-web-tg-443
   tcp_router:
     instances: 0
     persistent_disk:
       size_mb: automatic
     instance_type:
       id: automatic
-    internet_connected: false
+    internet_connected: true
 errand-config:
   deploy-autoscaler:
     post-deploy-state: true
