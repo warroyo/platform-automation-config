@@ -323,6 +323,7 @@ resource-config:
       id: automatic
     internet_connected: true
     elb_names: ((cf.resource-config.control.elb_names))
+    additional_vm_extensions: ((cf.resource-config.control.additional_vm_extensions))
   database:
     instances: ((cf.resource-config.database.instances))
     persistent_disk:
@@ -346,6 +347,7 @@ resource-config:
       id: automatic
     internet_connected: true
     elb_names: ((cf.resource-config.router.elb_names))
+    additional_vm_extensions: ((cf.resource-config.router.additional_vm_extensions))
   tcp_router:
     instances: ((cf.resource-config.tcp_router.instances))
     persistent_disk:
@@ -353,6 +355,7 @@ resource-config:
     instance_type:
       id: automatic
     internet_connected: true
+    additional_vm_extensions: ((cf.resource-config.tcp_router.additional_vm_extensions))
 errand-config:
   deploy-autoscaler:
     post-deploy-state: ((cf.errand-config.deploy-autoscaler))

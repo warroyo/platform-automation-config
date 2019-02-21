@@ -31,6 +31,8 @@ cf:
     control:
       instances: automatic
       elb_names: ["alb:dev-ssh-tg"]
+      additional_vm_extensions:
+      - ssh-lb-security-groups
     database:
       instances: automatic
     ha_proxy:
@@ -40,8 +42,12 @@ cf:
     router:
       instances: automatic
       elb_names: ["alb:dev-web-tg-80","alb:dev-web-tg-443"]
+      additional_vm_extensions:
+      - web-lb-security-groups
     tcp_router:
       instances: 0
+      additional_vm_extensions:
+      - tcp-lb-security-groups
 
   errand-config:
     deploy-autoscaler: true
