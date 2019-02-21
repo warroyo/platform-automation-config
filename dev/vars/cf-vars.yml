@@ -10,7 +10,7 @@ cf:
     properties:
       credhub_key_encryption_passwords: ((cf/product-properties/credhub_key_encryption_passwords))
       networking_poe_ssl_certs: ((cf/product-properties/networking_poe_ssl_certs))
-      loggregator_port: 4443
+      loggregator_port: 443
 
 
 
