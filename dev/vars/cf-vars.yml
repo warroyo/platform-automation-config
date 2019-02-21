@@ -39,7 +39,7 @@ cf:
       instances: 0
     router:
       instances: automatic
-      elb_names: ["nlb:dev-web-tg-80","nlb:dev-web-tg-443"]
+      elb_names: ["alb:dev-web-tg-80","alb:dev-web-tg-443"]
     tcp_router:
       instances: 0
 
