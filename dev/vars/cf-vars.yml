@@ -58,5 +58,5 @@ cf:
     push-usage-service: true
     smoke_tests: true
     test-autoscaling: false
-    metric_registrar_smoke_test: true
+    metric_registrar_smoke_test: false
     smbbrokerpush: false
