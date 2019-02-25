@@ -10,7 +10,7 @@ properties-configuration:
   director_configuration:
     allow_legacy_agents: true
     blobstore_type: ((director.director_configuration.blobstore_type))
-    bosh_recreate_on_next_deploy: false
+    bosh_recreate_on_next_deploy: ((director.director_configuration.bosh_recreate_on_next_deploy))
     bosh_recreate_persistent_disks_on_next_deploy: false
     database_type: ((director.director_configuration.database_type))
     director_worker_count: 5
