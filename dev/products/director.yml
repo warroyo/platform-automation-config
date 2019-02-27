@@ -47,6 +47,7 @@ properties-configuration:
     opsmanager_root_ca_trusted_certs: false
   syslog_configuration:
     enabled: false
+vmextensions-configuration: ((vm-extension-config))
 resource-configuration:
   compilation:
     instances: automatic
