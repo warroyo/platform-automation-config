@@ -9,6 +9,6 @@ credentials:
   type: certificate
   value:
     certificate: |
-      <cert>
+      <secret>
     private_key: |
-      <key>
+      <secret>

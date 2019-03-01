@@ -1,0 +1,7 @@
+credentials:
+- name: /concourse/infra/aws_secret_access_key
+  type: password
+  value: <secret>
+- name: /concourse/infra/aws_access_key
+  type: password
+  value: <secret>

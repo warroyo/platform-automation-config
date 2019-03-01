@@ -1,0 +1,9 @@
+credentials:
+- name: /concourse/infra/decryption-passphrase
+  type: password
+  value: <secret>
+- name: /concourse/infra/opsman_admin
+  type: user
+  value:
+    password: <secret>
+    username: <secret>

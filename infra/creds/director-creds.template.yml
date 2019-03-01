@@ -1,0 +1,7 @@
+credentials:
+- name: /concourse/infra/director/sshkey
+  type: rsa
+  value:
+    private_key: |-
+      <secret>
+    public_key: null
