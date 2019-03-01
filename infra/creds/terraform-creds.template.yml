@@ -1,0 +1,14 @@
+credentials:
+- name: /concourse/infra/tf/secret-access-key
+  type: password
+  value: <secret>
+- name: /concourse/infra/tf/access-key
+  type: password
+  value: <secret>
+- name: /concourse/infra/tf/sslcert
+  type: certificate
+  value:
+    certificate: |
+      <cert>
+    private_key: |
+      <key>

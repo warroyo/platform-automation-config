@@ -1,0 +1,17 @@
+---
+
+# vars file for product: OpsMan
+
+aws:
+  aws_access_key: ((aws_access_key))
+  aws_secret_access_key: ((aws_secret_access_key))
+  region: us-west-2
+  boot_disk_size: 100
+  vm_name: dev-ops-manager-vm              
+  subnet_id: subnet-03f1497cd2b0f708f
+  security_group_id: sg-0581c241bdb3e2783
+  key_pair_name: dev-ops-manager-key
+  iam_profile: dev_ops_manager
+  instance_type: m5.large
+  # At least one IP address (public or private) needs to be assigned to the VM.
+  public_ip: "54.70.149.242"

@@ -1,0 +1,16 @@
+access_key: ((tf/access-key))
+availability_zones:
+- us-west-2a
+- us-west-2b
+- us-west-2c
+dns_suffix: aws.warroyo.com
+env_name: infra
+region: us-west-2
+secret_key: ((tf/secret-access-key))
+ssl_cert: |
+  ((tf/sslcert.certificate))
+ssl_private_key: |
+  ((tf/sslcert.private_key))
+tags:
+- Team: Infra
+vpc_cidr: 10.3.0.0/16

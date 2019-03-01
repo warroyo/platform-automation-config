@@ -1,0 +1,64 @@
+az-configuration: ((director.az-configuration))
+network-assignment:
+  network: ((director.network-assignment.network))
+  other_availability_zones: []
+  singleton_availability_zone: ((director.network-assignment.singleton_availability_zone))
+networks-configuration:
+  icmp_checks_enabled: false
+  networks: ((director.networks-configuration.networks))
+properties-configuration:
+  director_configuration:
+    allow_legacy_agents: true
+    blobstore_type: ((director.director_configuration.blobstore_type))
+    bosh_recreate_on_next_deploy: ((director.director_configuration.bosh_recreate_on_next_deploy))
+    bosh_recreate_persistent_disks_on_next_deploy: false
+    database_type: ((director.director_configuration.database_type))
+    director_worker_count: 5
+    encryption:
+      keys: []
+      providers: []
+    hm_emailer_options:
+      enabled: false
+    hm_pager_duty_options:
+      enabled: false
+    identification_tags: {}
+    keep_unreachable_vms: false
+    local_blobstore_options:
+      tls_enabled: true
+    ntp_servers_string:  ((director.director_configuration.ntp_servers))
+    post_deploy_enabled: true
+    resurrector_enabled: true
+    retry_bosh_deploys: true
+    skip_director_drain: true
+  dns_configuration:
+    excluded_recursors: []
+    handlers: []
+  iaas_configuration:
+    additional_cloud_properties: {}
+    encrypted: false
+    iam_instance_profile: ((director.iaas_configuration.iam_profile))
+    key_pair_name: ((director.iaas_configuration.key_pair_name))
+    region: ((director.iaas_configuration.region))
+    security_group: ((director.iaas_configuration.security_group))
+    ssh_private_key: |
+      ((director.iaas_configuration.ssh_private_key))
+  security_configuration:
+    generate_vm_passwords: ((director.security-configuration.generate_vm_passwords))
+    opsmanager_root_ca_trusted_certs: false
+  syslog_configuration:
+    enabled: false
+vmextensions-configuration: ((director.vm-extension-config))
+resource-configuration:
+  compilation:
+    instances: automatic
+    instance_type:
+      id: automatic
+    internet_connected: false
+  director:
+    instances: automatic
+    persistent_disk:
+      size_mb: automatic
+    instance_type:
+      id: automatic
+    internet_connected: false
+
