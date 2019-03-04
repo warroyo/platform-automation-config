@@ -73,7 +73,7 @@ director:
         reserved_ip_ranges: 10.3.4.0-10.3.4.4
         availability_zone_names:
         - us-west-2a
-      - iaas_identifier: subnet-06bbe74d1678bea5
+      - iaas_identifier: subnet-06bbe74d1678bea58
         cidr: 10.3.5.0/24
         dns: 10.3.0.2
         gateway: 10.3.5.1
