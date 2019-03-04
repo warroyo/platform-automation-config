@@ -140,19 +140,9 @@ resource-configuration:
       id: automatic
     internet_connected: false
 vmextensions-configuration:
-- name: web-lb-security-groups
+- name: pks-api-security-groups
   cloud_properties:
     security_groups:
-    - web_lb_security_group
-    - vms_security_group
-- name: ssh-lb-security-groups
-  cloud_properties:
-    security_groups:
-    - ssh_lb_security_group
-    - vms_security_group
-- name: tcp-lb-security-groups
-  cloud_properties:
-    security_groups:
-    - tcp_lb_security_group
+    - pks_api_lb_security_group
     - vms_security_group
 
