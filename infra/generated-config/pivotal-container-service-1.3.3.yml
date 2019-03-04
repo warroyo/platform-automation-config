@@ -63,7 +63,12 @@ resource-config:
       size_mb: automatic
     instance_type:
       id: automatic
-    internet_connected: false
+    internet_connected: true
+    elb_names:
+    - alb:infra-pks-tg-9021
+    - alb:infra-pks-tg-8443
+    additional_vm_extensions:
+    - pks-api-security-groups
 errand-config:
   delete-all-clusters:
     pre-delete-state: true
