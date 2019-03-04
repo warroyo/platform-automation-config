@@ -1,6 +1,6 @@
 pks:
   product-properties:
-    pivotal-container-service.pks_tls: ((pks/product-properties/pks_tls_cert))
+    pks_tls: ((pks/product-properties/pks_tls_cert))
     pks_api_hostname: api.pks.infra.aws.warroyo.com
     cloud_provider:
       iam_instance_profile_master: infra_pks-master
@@ -20,3 +20,11 @@ pks:
       instance_type:
         id: automatic
       internet_connected: false
+  
+  errand-config:
+    delete-all-clusters: true
+    pks-nsx-t-precheck: false
+    smoke-tests: false
+    upgrade-all-service-instances: true
+    wavefront-alert-creation: false
+    wavefront-alert-deletion: false

@@ -2,8 +2,8 @@ product-name: pivotal-container-service
 product-properties:
   .pivotal-container-service.pks_tls:
     value:
-      cert_pem: ((pks.product-properties.pivotal-container-service.pks_tls.certificate))
-      private_key_pem: ((pks.product-properties.pivotal-container-service.pks_tls.private_key))
+      cert_pem: ((pks.product-properties.pks_tls.certificate))
+      private_key_pem: ((pks.product-properties.pks_tls.private_key))
   .properties.cloud_provider:
     value: AWS
   .properties.cloud_provider.aws.iam_instance_profile_master: ((pks.product-properties.cloud_provider.iam_instance_profile_master))
