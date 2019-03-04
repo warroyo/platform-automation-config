@@ -6,8 +6,10 @@ product-properties:
       private_key_pem: ((pks.product-properties.pks_tls.private_key))
   .properties.cloud_provider:
     value: AWS
-  .properties.cloud_provider.aws.iam_instance_profile_master: ((pks.product-properties.cloud_provider.iam_instance_profile_master))
-  .properties.cloud_provider.aws.iam_instance_profile_worker: ((pks.product-properties.cloud_provider.iam_instance_profile_worker))
+  .properties.cloud_provider.aws.iam_instance_profile_master: 
+    value: ((pks.product-properties.cloud_provider.iam_instance_profile_master))
+  .properties.cloud_provider.aws.iam_instance_profile_worker: 
+    value: ((pks.product-properties.cloud_provider.iam_instance_profile_worker))
   .properties.network_selector:
     value: flannel
   .properties.network_selector.flannel.pod_network_cidr:
