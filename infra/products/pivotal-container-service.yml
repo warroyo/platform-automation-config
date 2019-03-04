@@ -1,0 +1,71 @@
+product-name: pivotal-container-service
+product-properties:
+  .pivotal-container-service.pks_tls:
+    value:
+      cert_pem: ((pks.product-properties.pivotal-container-service.pks_tls.certificate))
+      private_key_pem: ((pks.product-properties.pivotal-container-service.pks_tls.private_key))
+  .properties.cloud_provider:
+    value: AWS
+  .properties.cloud_provider.aws.iam_instance_profile_master: ((pks.product-properties.cloud_provider.iam_instance_profile_master))
+  .properties.cloud_provider.aws.iam_instance_profile_worker: ((pks.product-properties.cloud_provider.iam_instance_profile_worker))
+  .properties.network_selector:
+    value: flannel
+  .properties.network_selector.flannel.pod_network_cidr:
+    value: 10.200.0.0/16
+  .properties.network_selector.flannel.service_cluster_cidr:
+    value: 10.100.200.0/24
+  .properties.pks-vrli:
+    value: disabled
+  .properties.pks_api_hostname:
+    value: ((pks.product-properties.pks_api_hostname))
+  .properties.plan1_selector:
+    value: Plan Active
+  .properties.plan2_selector:
+    value: Plan Active
+  .properties.plan3_selector:
+    value: Plan Inactive
+  .properties.proxy_selector:
+    value: Disabled
+  .properties.sink_resources_selector:
+    value: enabled
+  .properties.syslog_selector:
+    value: disabled
+  .properties.telemetry_selector:
+    value: disabled
+  .properties.uaa:
+    value: internal
+  .properties.uaa_oidc:
+    value: false
+  .properties.uaa_pks_cli_access_token_lifetime:
+    value: 600
+  .properties.uaa_pks_cli_refresh_token_lifetime:
+    value: 21600
+  .properties.vm_extensions:
+    value:
+    - public_ip
+  .properties.wavefront:
+    value: disabled
+  .properties.worker_max_in_flight:
+    value: 1
+network-properties:
+  network:
+    name: ((pks.network-properties.network.name))
+  other_availability_zones: ((pks.network-properties.other_availability_zones))
+  service_network: ((pks.network-properties.service_network))
+  singleton_availability_zone: ((pks.network-properties.singleton_availability_zone))
+resource-config:
+  pivotal-container-service: ((pks.resource-config.pivotal-container-service))
+errand-config:
+  delete-all-clusters:
+    pre-delete-state: ((pks.errand-config.delete-all-clusters))
+  pks-nsx-t-precheck:
+    post-deploy-state: ((pks.errand-config.pks-nsx-t-precheck))
+  smoke-tests:
+    post-deploy-state: ((pks.errand-config.smoke-tests))
+  upgrade-all-service-instances:
+    post-deploy-state: ((pks.errand-config.upgrade-all-service-instances))
+  wavefront-alert-creation:
+    post-deploy-state: ((pks.errand-config.wavefront-alert-creation))
+  wavefront-alert-deletion:
+    pre-delete-state: ((pks.errand-config.wavefront-alert-deletion))
+

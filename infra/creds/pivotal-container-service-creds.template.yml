@@ -1,0 +1,8 @@
+credentials:
+- name: /concourse/infra/pks/product-properties/pks_tls_cert
+  type: certificate
+  value:
+    certificate: |
+      <secret>
+    private_key: |
+      <secret>

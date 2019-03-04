@@ -1,0 +1,22 @@
+pks:
+  product-properties:
+    pivotal-container-service.pks_tls: ((pks/product-properties/pks_tls_cert))
+    pks_api_hostname: api.pks.infra.aws.warroyo.com
+    cloud_provider:
+      iam_instance_profile_master: infra_pks-master
+      iam_instance_profile_worker: infra_pks-worker
+
+  network-properties:
+    network: { name: infrastructure }
+    other_availability_zones: [{name: us-west-2a},{name: us-west-2b},{name: us-west-2c}]
+    singleton_availability_zone: {name: us-west-2a}
+    service_network:  { name: services }
+  
+  resource-config:
+    pivotal-container-service:
+      instances: automatic
+      persistent_disk:
+        size_mb: automatic
+      instance_type:
+        id: automatic
+      internet_connected: false
