@@ -1,0 +1,63 @@
+az-configuration: []
+network-assignment:
+  other_availability_zones: []
+networks-configuration:
+  icmp_checks_enabled: false
+  networks: []
+properties-configuration:
+  director_configuration:
+    allow_legacy_agents: true
+    blobstore_type: local
+    bosh_recreate_on_next_deploy: false
+    bosh_recreate_persistent_disks_on_next_deploy: false
+    database_type: internal
+    director_worker_count: 5
+    encryption:
+      keys: []
+      providers: []
+    hm_emailer_options:
+      enabled: false
+    hm_pager_duty_options:
+      enabled: false
+    identification_tags: {}
+    keep_unreachable_vms: false
+    local_blobstore_options:
+      tls_enabled: true
+    ntp_servers_string: ""
+    post_deploy_enabled: false
+    resurrector_enabled: false
+    retry_bosh_deploys: false
+    skip_director_drain: true
+  dns_configuration:
+    excluded_recursors: []
+    handlers: []
+  iaas_configuration:
+    additional_cloud_properties: {}
+    encrypted: false
+    guid: ((properties-configuration_iaas_configuration_guid))
+    iam_instance_profile: ((properties-configuration_iaas_configuration_iam_instance_profile))
+    key_pair_name: ((properties-configuration_iaas_configuration_key_pair_name))
+    kms_key_arn: ((properties-configuration_iaas_configuration_kms_key_arn))
+    name: ((properties-configuration_iaas_configuration_name))
+    region: ((properties-configuration_iaas_configuration_region))
+    security_group: ((properties-configuration_iaas_configuration_security_group))
+  security_configuration:
+    generate_vm_passwords: true
+    opsmanager_root_ca_trusted_certs: false
+  syslog_configuration:
+    enabled: false
+resource-configuration:
+  compilation:
+    instances: automatic
+    instance_type:
+      id: automatic
+    internet_connected: false
+  director:
+    instances: automatic
+    persistent_disk:
+      size_mb: automatic
+    instance_type:
+      id: automatic
+    internet_connected: false
+vmextensions-configuration: []
+
