@@ -12,5 +12,5 @@ mysql:
         user: test
         key: test
         server: test
-        destintaion: test
+        destination: test
         port: 22
