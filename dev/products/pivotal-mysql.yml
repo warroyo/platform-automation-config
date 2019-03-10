@@ -7,10 +7,10 @@ product-properties:
   .properties.backups_selector:
     value: SCP Backups
   .properties.backups_selector.scp.user:
-    value:
-      secret: ((mysql.product-properties.backups_selector.scp.user))
+    value: ((mysql.product-properties.backups_selector.scp.user))
   .properties.backups_selector.scp.key:
-    value: ((mysql.product-properties.backups_selector.scp.key))
+    value:
+      secret: ((mysql.product-properties.backups_selector.scp.key))
   .properties.backups_selector.scp.server:
     value: ((mysql.product-properties.backups_selector.scp.server))
   .properties.backups_selector.scp.destination:
