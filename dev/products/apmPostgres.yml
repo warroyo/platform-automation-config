@@ -18,18 +18,10 @@ product-properties:
     value: error
   .errand-runner.server_instance_count:
     value: 1
-  .mysql.roadmin_password:
-    value:
-      secret: ((mysql_roadmin_password.secret))
 network-properties:
-  network:
-    name: pas
-  other_availability_zones:
-  - name: us-west-2a
-  - name: us-west-2b
-  - name: us-west-2c
-  singleton_availability_zone:
-    name: us-west-2a
+  network: ((apm.network-properties.network))
+  other_availability_zones: ((apm.network-properties.other_availability_zones))
+  singleton_availability_zone: ((apm.network-properties.singleton_availability_zone))
 resource-config:
   errand-runner:
     instances: automatic

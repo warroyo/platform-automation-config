@@ -11,14 +11,9 @@ product-properties:
   .properties.space:
     value: credhub-service-broker-space
 network-properties:
-  network:
-    name: pas
-  other_availability_zones:
-  - name: us-west-2a
-  - name: us-west-2b
-  - name: us-west-2c
-  singleton_availability_zone:
-    name: us-west-2a
+  network: ((credhub.network-properties.network))
+  other_availability_zones: ((credhub.network-properties.other_availability_zones))
+  singleton_availability_zone: ((credhub.network-properties.singleton_availability_zone))
 resource-config:
   delete-all:
     instances: automatic

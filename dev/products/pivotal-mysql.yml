@@ -6,6 +6,16 @@ product-properties:
     value: false
   .properties.backups_selector:
     value: SCP Backups
+  .properties.backups_selector.scp.user:
+    value: ((mysql.product-properties.backups_selector.scp.user))
+  .properties.backups_selector.scp.key:
+    value: ((mysql.product-properties.backups_selector.scp.key))
+  .properties.backups_selector.scp.server:
+    value: ((mysql.product-properties.backups_selector.scp.server))
+  .properties.backups_selector.scp.destination:
+    value: ((mysql.product-properties.backups_selector.scp.destination))
+  .properties.backups_selector.scp.port:
+    value: ((mysql.product-properties.backups_selector.scp.port))
   .properties.canary_instances:
     value: 0
   .properties.deprecated_bindings_string:
@@ -19,7 +29,7 @@ product-properties:
   .properties.enable_tls_selector:
     value: disabled
   .properties.global_recipient_email:
-    value: warroyo@pivotal.io
+    value: ((mysql.product-properties.global_recipient_email))
   .properties.global_service_instance_limit:
     value: 50
   .properties.local_infile:
@@ -71,16 +81,10 @@ product-properties:
   .properties.wait_timeout:
     value: 28800
 network-properties:
-  network:
-    name: pas
-  other_availability_zones:
-  - name: us-west-2a
-  - name: us-west-2b
-  - name: us-west-2c
-  service_network:
-    name: services
-  singleton_availability_zone:
-    name: us-west-2a
+  network: ((mysql.network-properties.network))
+  other_availability_zones: ((mysql.network-properties.other_availability_zones))
+  service_network: ((mysql.network-properties.services_network))
+  singleton_availability_zone: ((mysql.network-properties.singleton_availability_zone))
 resource-config:
   dedicated-mysql-broker:
     instances: automatic

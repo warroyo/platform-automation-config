@@ -24,26 +24,20 @@ product-properties:
     value: enable
   .properties.boshtasks.enable.bosh_taskcheck_password:
     value:
-      secret: ((properties_boshtasks_enable_bosh_taskcheck_password.secret))
+      secret: ((healthwatch.product-properties.properties.boshtaskcheck_password))
   .properties.boshtasks.enable.bosh_taskcheck_username:
-    value: blah
+    value: ((healthwatch.product-properties.properties.boshtaskcheck_username))
   .properties.opsman:
     value: enable
   .properties.opsman.enable.url:
-    value: https://pcf.dev.aws.warroyo.com
+    value: ((healthwatch.product-properties.properties.opsman_url)
   .properties.syslog_selector:
     value: "No"
 network-properties:
-  network:
-    name: pas
-  other_availability_zones:
-  - name: us-west-2a
-  - name: us-west-2b
-  - name: us-west-2c
-  service_network:
-    name: services
-  singleton_availability_zone:
-    name: us-west-2a
+  network: ((healthwatch.network-properties.network))
+  other_availability_zones: ((healthwatch.network-properties.other_availability_zones))
+  service_network: ((healthwatch.network-properties.services_network))
+  singleton_availability_zone: ((healthwatch.network-properties.singleton_availability_zone))
 resource-config:
   healthwatch-forwarder:
     instances: automatic
