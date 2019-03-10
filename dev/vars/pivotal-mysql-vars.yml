@@ -1,0 +1,16 @@
+mysql:
+  network-properties: 
+    network: {name: pas}
+    services_network: {name: services}
+    other_availability_zones: [{name: us-west-2a},{name: us-west-2b},{name: us-west-2c}]
+    singleton_availability_zone: {name: us-west-2a}
+
+  product-properties:
+    global_recipient_email: warroyo@pivotal.io
+    backups_selector:
+      scp:
+        user: test
+        key: test
+        server: test
+        destintaion: test
+        port: 22

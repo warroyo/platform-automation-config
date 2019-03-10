@@ -1,0 +1,12 @@
+healthwatch:
+  network-properties: 
+    network: {name: pas}
+    services_network: {name: services}
+    other_availability_zones: [{name: us-west-2a},{name: us-west-2b},{name: us-west-2c}]
+    singleton_availability_zone: {name: us-west-2a}
+
+  product-properties:
+    properties:
+      opsman_url:  https://pcf.dev.aws.warroyo.com
+      bosh_taskcheck_username: ((healthwatch/product-properties/boshtaskcreds.username))
+      bosh_taskcheck_password: ((healthwatch/product-properties/boshtaskcreds.password))
