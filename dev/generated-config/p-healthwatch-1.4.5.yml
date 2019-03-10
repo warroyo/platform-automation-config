@@ -8,6 +8,8 @@ product-properties:
     value: 2
   .healthwatch-forwarder.cli_instance_count:
     value: 2
+  .healthwatch-forwarder.health_check_az:
+    value: us-west-2a
   .healthwatch-forwarder.ingestor_instance_count:
     value: 4
   .healthwatch-forwarder.opsman_instance_count:
@@ -23,15 +25,25 @@ product-properties:
   .properties.boshtasks.enable.bosh_taskcheck_password:
     value:
       secret: ((properties_boshtasks_enable_bosh_taskcheck_password.secret))
+  .properties.boshtasks.enable.bosh_taskcheck_username:
+    value: blah
   .properties.opsman:
     value: enable
+  .properties.opsman.enable.url:
+    value: https://pcf.dev.aws.warroyo.com
   .properties.syslog_selector:
     value: "No"
 network-properties:
-  network: null
-  other_availability_zones: []
-  service_network: null
-  singleton_availability_zone: null
+  network:
+    name: pas
+  other_availability_zones:
+  - name: us-west-2a
+  - name: us-west-2b
+  - name: us-west-2c
+  service_network:
+    name: services
+  singleton_availability_zone:
+    name: us-west-2a
 resource-config:
   healthwatch-forwarder:
     instances: automatic
