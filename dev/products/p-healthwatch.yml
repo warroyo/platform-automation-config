@@ -24,9 +24,9 @@ product-properties:
     value: enable
   .properties.boshtasks.enable.bosh_taskcheck_password:
     value:
-      secret: ((healthwatch.product-properties.properties.boshtaskcheck_password))
+      secret: ((healthwatch.product-properties.properties.bosh_taskcheck_password))
   .properties.boshtasks.enable.bosh_taskcheck_username:
-    value: ((healthwatch.product-properties.properties.boshtaskcheck_username))
+    value: ((healthwatch.product-properties.properties.bosh_taskcheck_username))
   .properties.opsman:
     value: enable
   .properties.opsman.enable.url:
