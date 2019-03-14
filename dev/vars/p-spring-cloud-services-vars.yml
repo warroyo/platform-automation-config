@@ -1,0 +1,7 @@
+scs:
+  product-properties:
+    deploy-service-broker:
+      message_bus_service: p-rabbitmq
+      message_bus_service_plan: standard
+      persistence_store_service: p.mysql
+      persistence_store_service_plan: db-small

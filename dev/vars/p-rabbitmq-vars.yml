@@ -1,0 +1,4 @@
+rabbitmq:
+  product-properties:
+    multitenant_support:
+      server_admin_credentials: ((rabbitmq/product-properties/server_admin_credentials))
