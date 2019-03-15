@@ -1,0 +1,5 @@
+pasw:
+  network-properties: 
+    network: {name: pas}
+    other_availability_zones: [{name: us-west-2a},{name: us-west-2b},{name: us-west-2c}]
+    singleton_availability_zone: {name: us-west-2a}
