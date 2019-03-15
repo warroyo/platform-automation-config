@@ -7,7 +7,7 @@ product-properties:
   .properties.kms:
     value: disable
   .properties.rdp_enabled:
-    value: false
+    value: true
   .properties.smoke_tests_windows:
     value: on_demand
   .properties.system_logging:
