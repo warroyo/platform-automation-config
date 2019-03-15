@@ -1,7 +1,7 @@
 product-name: pas-windows
 product-properties:
   .properties.bosh_ssh_enabled:
-    value: false
+    value: true
   .properties.enable_cf_metric_name:
     value: false
   .properties.kms:
@@ -15,9 +15,14 @@ product-properties:
   .properties.windows_admin_password:
     value: use_default
 network-properties:
-  network: null
-  other_availability_zones: []
-  singleton_availability_zone: null
+  network:
+    name: pas
+  other_availability_zones:
+  - name: us-west-2a
+  - name: us-west-2b
+  - name: us-west-2c
+  singleton_availability_zone:
+    name: us-west-2a
 resource-config:
   windows_diego_cell:
     instances: automatic
