@@ -1,0 +1,5 @@
+---
+pivnet-api-token: ((pivnet_token))
+pivnet-file-glob: "*.pivotal"
+pivnet-product-slug: pas-windows
+product-version-regex: ^2\.4\..*$
