@@ -72,6 +72,10 @@ product-properties:
     value: 3600
   .properties.ccdb_read_timeout:
     value: 3600
+  .properties.stack_migration_acknowledgement:
+    value: x
+  .properties.security_acknowledgement:	
+    value: x
   .properties.cf_networking_database_connection_timeout:
     value: 120
   .properties.cf_networking_enable_space_developer_self_service:
