@@ -48,6 +48,12 @@ cf:
       instances: 0
       additional_vm_extensions:
       - tcp-lb-security-groups
+    istio_control:
+      instances: 0
+    istio_router:
+      instances: 0
+    route_syncer:
+      instances: 0
 
   errand-config:
     deploy-autoscaler: true
