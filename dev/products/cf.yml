@@ -104,7 +104,7 @@ product-properties:
     value: {}
   .properties.credhub_hsm_provider_partition_password:
     value: {}
-    .properties.credhub_key_encryption_passwords:
+  .properties.credhub_key_encryption_passwords:
     value:
     - key:
         secret: "((cf.product-properties.properties.credhub_key_encryption_passwords))"
