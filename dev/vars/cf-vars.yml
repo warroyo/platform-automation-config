@@ -26,10 +26,10 @@ cf:
     blobstore:
       instances: automatic
     compute:
-      instances: 5
+      instances: 2
       additional_networks: []
     control:
-      instances: 2
+      instances: 1
       elb_names: ["alb:dev-ssh-tg"]
       additional_vm_extensions:
       - ssh-lb-security-groups
@@ -40,7 +40,7 @@ cf:
     mysql_monitor:
       instances: 0
     router:
-      instances: 2
+      instances: 1
       elb_names: ["alb:dev-web-tg-80","alb:dev-web-tg-443"]
       additional_vm_extensions:
       - web-lb-security-groups
