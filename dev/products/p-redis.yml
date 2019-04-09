@@ -15,6 +15,10 @@ product-properties:
     value: Plan Inactive
   .properties.medium_plan_selector:
     value: Plan Active
+  .properties.small_plan_selector.active.az_single_select:
+    value: us-west-2a
+  .properties.medium_plan_selector.active.az_single_select:
+    value: us-west-2a
   .properties.metrics_polling_interval:
     value: 30
   .properties.small_plan_selector:
