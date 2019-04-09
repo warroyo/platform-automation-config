@@ -45,6 +45,7 @@ properties-configuration:
   security_configuration:
     generate_vm_passwords: ((director.security-configuration.generate_vm_passwords))
     opsmanager_root_ca_trusted_certs: false
+    trusted_certificates: ((director.security-configuration.trusted_certificates))
   syslog_configuration:
     enabled: false
 vmextensions-configuration: ((director.vm-extension-config))

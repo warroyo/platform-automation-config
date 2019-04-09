@@ -16,7 +16,35 @@ director:
 
   security-configuration:
     generate_vm_passwords: true
-    
+    trusted_certificates: |
+      -----BEGIN CERTIFICATE-----
+      MIIE3DCCAsSgAwIBAgIBATANBgkqhkiG9w0BAQsFADAOMQwwCgYDVQQDEwNwY2Yw
+      HhcNMTkwNDA5MDE0NDE3WhcNMjAxMDA5MDE0NDE3WjAOMQwwCgYDVQQDEwNwY2Yw
+      ggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDF+Hirq5nuiwiVWlEEaynY
+      ioaX1SGCsY4yDEWHbPVJ7T/JlzIiyOQvCYTisXQSo+8tkjwTfbP6gnWAUSDmb2Db
+      HCGZtnHVIK9gqiQUVqUIPSuZO62K4/V5tkrGz4WW+M5gcbnJOAyurCSWwNaZC1pD
+      nisIM/yY4LcaZqzTORhqTPFv0NAJbqzbuCNmVf4s4RoS/5rKOpcNVBtmm3DOQ910
+      O1TYMV/FtNbRWsl1vFJRmOhx+2gsDb07rusq67uj/J/cdO7rwE8JfcV6DTUDuCR/
+      HbFgHZJ2pzEtcS7hXVht8b2Cc0mOHvcHpvS3re/Wv5RnD5YXMClB0xyNSuIMG5MM
+      WWFt8kV+oxy49MWwa29Ayr37AHPWQxIihADPdtJXrjGS+GG9ndkJH96Cw1X/2FyP
+      xqD/EUQX/smV8OvxNhpkAh6JkfwAd2R5lZq8T9tL+JbqQ+UyEMw7I6W+fcrprwql
+      c2G+60L0YcL9ywZ9Vd7EsrdP0x6fbHQKsr/aKuxglh9Y+R0oB+MTVyGh8PSjPWxQ
+      IgSxMu7c94LcuCxsIRY0N4/r1NoC7fh3Qobfm2e00MS7kqO8HCXZyY18a2RVWB7Q
+      4tMRBXB2QW2TyRPmklNYfqifYIE/CWjtZfrRuvdf5vf8PXU4EqEjwj0tDAe74jFk
+      k99zHVIBlQCLHPlA9z0qqwIDAQABo0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0T
+      AQH/BAgwBgEB/wIBADAdBgNVHQ4EFgQUe+CcSSuD2JIe+eds15hNKT96lycwDQYJ
+      KoZIhvcNAQELBQADggIBABlOhh2MhgEUacB3vGvmwAoV+SuuZQqY5WvQafMCXgLc
+      I3KKUaYTpnMMYZ9C5Avv0h4s/3Al8NYuwFyXMhP9RCEBCremsjju+TEOoVgdcTc9
+      w2AVo5F/K0IB6iP+hynLvF246XqXTBzLXs8/RVos9Q8ELDUIVRDHHgOynex6GMvF
+      JWy/6JWjfmXVrRIyPBDg0Qx8cN/30EP2fTcdrA44C7IgjhFucbutwc46oqOu68rr
+      tEIEyyLcUfyHUb6/t2DGM9QgtpQx/hgJEyMnk9aZKvpTCVN1QekvpJI9mfnbZ/5S
+      3WfQKdbDzTO9uoKZepyZOjfiwXkEy1FKV3aHTtANWOty6lZl9SwLW/aiAObL/rPc
+      nJuFGFEWzhLoXDthsNv1ALbsVe97hgYNLZ8ic7HKCxLKxV6IwHy4V6Omz9cXv4XV
+      7hNWrH9sZcQknGXFkmPNWOzwjlVXaDynX7bf/QqLmrvBYbVlwWhhINp+aXIvKCkv
+      OuPba3q0jaFwrE11x62b+Zx779OW7anBZPRg0c/xmFiROTWtDbh0XC4/1KRhxXDp
+      qpD0AP8wGMv7sWgkm6bfbFmwmkaRL6WyB/5EPyT14VDBmjGJACLa4cMashfnT3qi
+      ifai2VcVEUcHgSlUlkKhx/S2hOKiq6ZYn0wqceql+TTlNTux4pjTh0dUJ92vgi1+
+      -----END CERTIFICATE-----
   az-configuration:
   - name: us-west-2a
   - name: us-west-2b
