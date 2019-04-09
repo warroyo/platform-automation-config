@@ -59,7 +59,7 @@ cf:
     deploy-autoscaler: true
     deploy-notifications: false
     deploy-notifications-ui: false
-    nfsbrokerpush: false
+    nfsbrokerpush: true
     push-apps-manager: true
     push-usage-service: true
     smoke_tests: true
