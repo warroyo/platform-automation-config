@@ -22,9 +22,33 @@ product-properties:
     value: ((pks.product-properties.pks_api_hostname))
   .properties.plan1_selector:
     value: Plan Active
+  .properties.plan1_selector.active.master_az_placement:
+    value:
+    - us-west-2a
+    - us-west-2b
+    - us-west-2c
   .properties.plan2_selector:
     value: Plan Active
+  .properties.plan2_selector.active.master_az_placement:
+    value:
+    - us-west-2a
+    - us-west-2b
+    - us-west-2c
   .properties.plan3_selector:
+    value: Plan Inactive
+  .properties.plan4_selector:
+    value: Plan Inactive
+  .properties.plan5_selector:
+    value: Plan Inactive
+  .properties.plan6_selector:
+    value: Plan Inactive
+  .properties.plan7_selector:
+    value: Plan Inactive
+  .properties.plan8_selector:
+    value: Plan Inactive
+  .properties.plan9_selector:
+    value: Plan Inactive
+  .properties.plan10_selector:
     value: Plan Inactive
   .properties.proxy_selector:
     value: Disabled
