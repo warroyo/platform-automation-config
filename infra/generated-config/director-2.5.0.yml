@@ -1,9 +1,88 @@
-az-configuration: []
+az-configuration:
+- name: us-west-2a
+  iaas_configuration_guid: e1c90b6794a67a2c48cc
+- name: us-west-2b
+  iaas_configuration_guid: e1c90b6794a67a2c48cc
+- name: us-west-2c
+  iaas_configuration_guid: e1c90b6794a67a2c48cc
 network-assignment:
+  network:
+    name: infrastructure
   other_availability_zones: []
+  singleton_availability_zone:
+    name: us-west-2a
 networks-configuration:
   icmp_checks_enabled: false
-  networks: []
+  networks:
+  - name: infrastructure
+    subnets:
+    - iaas_identifier: subnet-050de0c7469ab2508
+      cidr: 10.3.16.0/28
+      dns: 10.3.0.2
+      gateway: 10.3.16.1
+      reserved_ip_ranges: 10.3.16.0-10.3.16.4
+      availability_zone_names:
+      - us-west-2a
+    - iaas_identifier: subnet-05f6c80cb9a22d6e9
+      cidr: 10.3.16.16/28
+      dns: 10.3.0.2
+      gateway: 10.3.16.17
+      reserved_ip_ranges: 10.3.16.16-10.3.16.20
+      availability_zone_names:
+      - us-west-2b
+    - iaas_identifier: subnet-048222f08e202acce
+      cidr: 10.3.16.32/28
+      dns: 10.3.0.2
+      gateway: 10.3.16.33
+      reserved_ip_ranges: 10.3.16.32-10.3.16.36
+      availability_zone_names:
+      - us-west-2c
+  - name: pks
+    subnets:
+    - iaas_identifier: subnet-0ea1f7f1ffb45fdfe
+      cidr: 10.3.4.0/24
+      dns: 10.3.0.2
+      gateway: 10.3.4.1
+      reserved_ip_ranges: 10.3.4.0-10.3.4.4
+      availability_zone_names:
+      - us-west-2a
+    - iaas_identifier: subnet-0a8ec484778e7afce
+      cidr: 10.3.5.0/24
+      dns: 10.3.0.2
+      gateway: 10.3.5.1
+      reserved_ip_ranges: 10.3.5.0-10.3.5.4
+      availability_zone_names:
+      - us-west-2b
+    - iaas_identifier: subnet-0eb0fd26a15af9a4d
+      cidr: 10.3.6.0/24
+      dns: 10.3.0.2
+      gateway: 10.3.6.1
+      reserved_ip_ranges: 10.3.6.0-10.3.6.4
+      availability_zone_names:
+      - us-west-2c
+  - name: services
+    subnets:
+    - iaas_identifier: subnet-0f8821f6265ed7313
+      cidr: 10.3.8.0/24
+      dns: 10.3.0.2
+      gateway: 10.3.8.1
+      reserved_ip_ranges: 10.3.8.0-10.3.8.4
+      availability_zone_names:
+      - us-west-2a
+    - iaas_identifier: subnet-041fe9432710c015d
+      cidr: 10.3.9.0/24
+      dns: 10.3.0.2
+      gateway: 10.3.9.1
+      reserved_ip_ranges: 10.3.9.0-10.3.9.4
+      availability_zone_names:
+      - us-west-2b
+    - iaas_identifier: subnet-012532d673a8f6264
+      cidr: 10.3.10.0/24
+      dns: 10.3.0.2
+      gateway: 10.3.10.1
+      reserved_ip_ranges: 10.3.10.0-10.3.10.4
+      availability_zone_names:
+      - us-west-2c
 properties-configuration:
   director_configuration:
     blobstore_type: local
@@ -23,11 +102,12 @@ properties-configuration:
     keep_unreachable_vms: false
     local_blobstore_options:
       tls_enabled: true
-    ntp_servers_string: ""
-    post_deploy_enabled: false
-    resurrector_enabled: false
-    retry_bosh_deploys: false
-    skip_director_drain: false
+    ntp_servers_string: 0.amazon.pool.ntp.org, 1.amazon.pool.ntp.org, 2.amazon.pool.ntp.org,
+      3.amazon.pool.ntp.org
+    post_deploy_enabled: true
+    resurrector_enabled: true
+    retry_bosh_deploys: true
+    skip_director_drain: true
   dns_configuration:
     excluded_recursors: []
     handlers: []
@@ -59,5 +139,10 @@ resource-configuration:
     instance_type:
       id: automatic
     internet_connected: false
-vmextensions-configuration: []
+vmextensions-configuration:
+- name: pks-api-security-groups
+  cloud_properties:
+    security_groups:
+    - pks_api_lb_security_group
+    - vms_security_group
 
