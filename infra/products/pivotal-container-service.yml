@@ -27,9 +27,19 @@ product-properties:
     - us-west-2a
     - us-west-2b
     - us-west-2c
+  .properties.plan1_selector.active.worker_az_placement:
+    value:
+    - us-west-2a
+    - us-west-2b
+    - us-west-2c
   .properties.plan2_selector:
     value: Plan Active
   .properties.plan2_selector.active.master_az_placement:
+    value:
+    - us-west-2a
+    - us-west-2b
+    - us-west-2c
+  .properties.plan2_selector.active.worker_az_placement:
     value:
     - us-west-2a
     - us-west-2b
