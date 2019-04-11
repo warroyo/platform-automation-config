@@ -37,21 +37,21 @@ director:
     networks: 
     - name: infrastructure
       subnets:
-      - iaas_identifier: subnet-072c50d08d8ed4306
+      - iaas_identifier: subnet-050de0c7469ab2508
         cidr: 10.3.16.0/28
         dns: 10.3.0.2
         gateway: 10.3.16.1
         reserved_ip_ranges: 10.3.16.0-10.3.16.4
         availability_zone_names:
         - us-west-2a
-      - iaas_identifier: subnet-00425b907ac6a822a
+      - iaas_identifier: subnet-05f6c80cb9a22d6e9
         cidr: 10.3.16.16/28
         dns: 10.3.0.2
         gateway: 10.3.16.17
         reserved_ip_ranges: 10.3.16.16-10.3.16.20
         availability_zone_names:
         - us-west-2b
-      - iaas_identifier: subnet-045a4d07b72032d1e
+      - iaas_identifier: subnet-048222f08e202acce
         cidr: 10.3.16.32/28
         dns: 10.3.0.2
         gateway: 10.3.16.33
@@ -60,21 +60,21 @@ director:
         - us-west-2c
     - name: pks
       subnets:
-      - iaas_identifier: subnet-01b0ad038320a2745
+      - iaas_identifier: subnet-0ea1f7f1ffb45fdfe
         cidr: 10.3.4.0/24
         dns: 10.3.0.2
         gateway: 10.3.4.1
         reserved_ip_ranges: 10.3.4.0-10.3.4.4
         availability_zone_names:
         - us-west-2a
-      - iaas_identifier: subnet-06bbe74d1678bea58
+      - iaas_identifier: subnet-0a8ec484778e7afce
         cidr: 10.3.5.0/24
         dns: 10.3.0.2
         gateway: 10.3.5.1
         reserved_ip_ranges: 10.3.5.0-10.3.5.4
         availability_zone_names:
         - us-west-2b
-      - iaas_identifier: subnet-087a272d9b85e6067
+      - iaas_identifier: subnet-0eb0fd26a15af9a4d
         cidr: 10.3.6.0/24
         dns: 10.3.0.2
         gateway: 10.3.6.1
@@ -83,21 +83,21 @@ director:
         - us-west-2c
     - name: services
       subnets:
-      - iaas_identifier: subnet-0edb8908b1bb40dcc
+      - iaas_identifier: subnet-0f8821f6265ed7313
         cidr: 10.3.8.0/24
         dns: 10.3.0.2
         gateway: 10.3.8.1
         reserved_ip_ranges: 10.3.8.0-10.3.8.4
         availability_zone_names:
         - us-west-2a
-      - iaas_identifier: subnet-0448a2770ce347a52
+      - iaas_identifier: subnet-041fe9432710c015d
         cidr: 10.3.9.0/24
         dns: 10.3.0.2
         gateway: 10.3.9.1
         reserved_ip_ranges: 10.3.9.0-10.3.9.4
         availability_zone_names:
         - us-west-2b
-      - iaas_identifier: subnet-08d569acffa7cf898
+      - iaas_identifier: subnet-012532d673a8f6264
         cidr: 10.3.10.0/24
         dns: 10.3.0.2
         gateway: 10.3.10.1
