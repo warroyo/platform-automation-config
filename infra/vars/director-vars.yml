@@ -3,7 +3,7 @@ director:
     iam_profile: infra_ops_manager
     key_pair_name: infra-ops-manager-key
     region: us-west-2
-    security_group: sg-08bbe1b9ad7e9a904
+    security_group: sg-05d33933ea50b64d4
     ssh_private_key: |
       ((director/sshkey.private_key))
 
