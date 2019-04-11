@@ -14,4 +14,4 @@ aws:
   iam_profile: infra_ops_manager
   instance_type: m5.large
   # At least one IP address (public or private) needs to be assigned to the VM.
-  public_ip: "52.24.145.170"
+  public_ip: "54.148.194.205"
