@@ -9,9 +9,11 @@ product-properties:
   .properties.auth_mode:
     value: db_auth
   .properties.clair_updater_interval:
-    value: 0
+    value: 24
   .properties.customize_container_network:
     value: default
+  .properties.hostname:
+    value: harbor.infra.aws.warroyo.com
   .properties.no_proxy:
     value: 127.0.0.1,localhost,ui,registry
   .properties.registry_storage:
@@ -25,9 +27,14 @@ product-properties:
   .properties.with_notary:
     value: true
 network-properties:
-  network: null
-  other_availability_zones: []
-  singleton_availability_zone: null
+  network:
+    name: infrastructure
+  other_availability_zones:
+  - name: us-west-2a
+  - name: us-west-2b
+  - name: us-west-2c
+  singleton_availability_zone:
+    name: us-west-2a
 resource-config:
   harbor-app:
     instances: automatic
@@ -35,7 +42,9 @@ resource-config:
       size_mb: automatic
     instance_type:
       id: automatic
-    internet_connected: false
+    internet_connected: true
+    elb_names:
+    - harbor-infra
   smoke-testing:
     instances: automatic
     instance_type:
