@@ -1,0 +1,49 @@
+product-name: harbor-container-registry
+product-properties:
+  .properties.admin_password:
+    value:
+      secret: ((properties_admin_password.secret))
+  .properties.admin_password_for_smoketest:
+    value:
+      secret: ((properties_admin_password_for_smoketest.secret))
+  .properties.auth_mode:
+    value: db_auth
+  .properties.clair_updater_interval:
+    value: 0
+  .properties.customize_container_network:
+    value: default
+  .properties.no_proxy:
+    value: 127.0.0.1,localhost,ui,registry
+  .properties.registry_storage:
+    value: filesystem
+  .properties.server_cert_key:
+    value:
+      cert_pem: ((properties_server_cert_key.cert_pem))
+      private_key_pem: ((properties_server_cert_key.private_key_pem))
+  .properties.with_clair:
+    value: true
+  .properties.with_notary:
+    value: true
+network-properties:
+  network: null
+  other_availability_zones: []
+  singleton_availability_zone: null
+resource-config:
+  harbor-app:
+    instances: automatic
+    persistent_disk:
+      size_mb: automatic
+    instance_type:
+      id: automatic
+    internet_connected: false
+  smoke-testing:
+    instances: automatic
+    instance_type:
+      id: automatic
+    internet_connected: false
+errand-config:
+  smoke-testing:
+    post-deploy-state: when-changed
+  uaa-deregistration:
+    pre-delete-state: false
+
