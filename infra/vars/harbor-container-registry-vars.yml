@@ -1,0 +1,36 @@
+harbor:
+  product-properties:
+    admin_password: ((harbor/product-properties/admin_password))
+    clair_updater_interval: 24
+    hostname: harbor.infra.aws.warroyo.com
+    server_certs:
+      cert_pem: ((harbor/product-properties/server_cert.certificate))
+      private_key_pem: ((harbor/product-properties/server_cert.private_key))
+
+  network-properties:
+    network: { name: infrastructure }
+    other_availability_zones: [{name: us-west-2a},{name: us-west-2b},{name: us-west-2c}]
+    singleton_availability_zone: {name: us-west-2a}
+    service_network:  { name: infrastructure }
+  
+  resource-config:
+    harbor-app:
+      instances: automatic
+      persistent_disk:
+        size_mb: automatic
+      instance_type:
+        id: automatic
+      internet_connected: true
+      elb_names:
+      - infra-harbor-lb
+    smoke-testing:
+      instances: automatic
+      instance_type:
+        id: automatic
+      internet_connected: false
+  
+  errand-config:
+    smoke-testing:
+      post-deploy-state: when-changed
+    uaa-deregistration:
+      pre-delete-state: false

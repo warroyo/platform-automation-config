@@ -1,0 +1,11 @@
+credentials:
+- name: /concourse/infra/harbor/product-properties/server_cert
+  type: certificate
+  value:
+    certificate: |
+      <secret>
+    private_key: |
+      <secret>
+- name: /concourse/infra/harbor/product-properties/admin_password
+  type: password
+  value: <secret>
