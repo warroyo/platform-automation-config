@@ -18,6 +18,8 @@ product-properties:
     value: 127.0.0.1,localhost,ui,registry
   .properties.registry_storage:
     value: filesystem
+  .properties.server_cert_ca:
+    value: ((harbor.product-properties.server_cert_ca))
   .properties.server_cert_key:
     value: ((harbor.product-properties.server_certs))
   .properties.with_clair:

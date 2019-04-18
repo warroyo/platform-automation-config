@@ -3,10 +3,10 @@ harbor:
     admin_password: ((harbor/product-properties/admin_password))
     clair_updater_interval: 24
     hostname: harbor.infra.aws.warroyo.com
+    server_cert_ca: ((harbor/product-properties/server_cert.ca))
     server_certs:
       cert_pem: ((harbor/product-properties/server_cert.certificate))
       private_key_pem: ((harbor/product-properties/server_cert.private_key))
-      server_cert_ca: ((harbor/product-properties/server_cert.ca))
 
   network-properties:
     network: { name: infrastructure }
