@@ -6,6 +6,7 @@ harbor:
     server_certs:
       cert_pem: ((harbor/product-properties/server_cert.certificate))
       private_key_pem: ((harbor/product-properties/server_cert.private_key))
+      server_cert_ca: ((harbor/product-properties/server_cert.ca))
 
   network-properties:
     network: { name: infrastructure }

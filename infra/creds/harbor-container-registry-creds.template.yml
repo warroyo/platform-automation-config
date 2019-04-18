@@ -6,6 +6,10 @@ credentials:
       <secret>
     private_key: |
       <secret>
+    ca: |
+      <secret>
 - name: /concourse/infra/harbor/product-properties/admin_password
   type: password
   value: <secret>
+
+  
