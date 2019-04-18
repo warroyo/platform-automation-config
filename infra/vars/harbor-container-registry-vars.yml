@@ -21,8 +21,9 @@ harbor:
       instance_type:
         id: automatic
       internet_connected: true
-      elb_names:
-      - infra-harbor-lb
+      elb_names: ["alb:infra-harbor-443-tg","alb:infra-harbor-80-tg"]
+      additional_vm_extensions:
+      - harbor-security-groups
     smoke-testing:
       instances: automatic
       instance_type:

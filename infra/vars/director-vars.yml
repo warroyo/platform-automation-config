@@ -32,6 +32,9 @@ director:
   - name: pks-api-security-groups
     cloud_properties:
       security_groups: ["pks_api_lb_security_group", "vms_security_group"]
+  - name: harbor-security-groups
+    cloud_properties:
+      security_groups: ["infra-harbor-lb-sg", "vms_security_group"]
 
   networks-configuration:
     networks: 
