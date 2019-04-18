@@ -18,6 +18,9 @@ product-properties:
     value: 127.0.0.1,localhost,ui,registry
   .properties.registry_storage:
     value: filesystem
+  .properties.server_cert_ca:
+    value: "-----BEGIN CERTIFICATE-----\r\nMIIE3DCCAsSgAwIBAgIBATANBgkqhkiG9w0BAQsFADAOMQwwCgYDVQQDEwNwa3Mw\r\nHhcNMTkwNDE4MTgxODQ5WhcNMjAxMDE4MTgxODQ5WjAOMQwwCgYDVQQDEwNwa3Mw\r\nggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDmjticmMMrpUkR2CkxCUR+\r\nu4bpVwL1NI+DuFgnRmszQd/otej8RZ/tyjwS5K92LIuat2fhAQTixy8GRpuLDTgV\r\nzRyRArEv5R9e8Tu7XSSGQIpOlliecK505pBKQm/YHCxveqabkkpgDrqY0GTgD2ho\r\n1ICAT18+OMMLR2JVIJBOwq05x7dye3YNLlrEXE65PhpNLEdwYPmVVeINsHkABigy\r\nggp9GtARGYTc31himCqQPzLsjgyCrLy9FbNsXdLxHORyemeThNlqbj7gIF6G4aOd\r\nuH/fYgYXcdu0QeycC0v9ymI0WIGn0LYmkwLrefd93xY0wq6bdjcVS8B/Lz2OCNAZ\r\na0B722YvEaEvn+j8viq5Oyz1kYl3bJbkRzc7b5lQMOEwYtXe1O/Bjck/xbjrOMsR\r\nAMWmvoqkOHn8EyB1NOTQcaAL9wpLSCEIb6NDKIMuTHpQBeCF0fS8mo8W++yEhDDK\r\nBJ+14/WIHHxq757ATHivbMR7W0D35lV5fJygssU0bdi8UMUB3uVb7M/L+BIVGbhA\r\nDulnqeWXTV5RcQtuxByqVyOiSNETTsM3p7LCpMsSOa2YAP/DTxeWr7X8Ky15fXEF\r\ns18xc/S6tyal7gjHQV1HL73LqyY4gFxlDnC0NtTkjXv69vyBzWs3mG27jGH/i3Ym\r\nRZLdIr72t39Z5kiXGXCy9wIDAQABo0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0T\r\nAQH/BAgwBgEB/wIBADAdBgNVHQ4EFgQUoI2n5YsNymA2jNANCXcfauhPhRswDQYJ\r\nKoZIhvcNAQELBQADggIBACiK26mLTKGt+f3TMdiUC/uCnSezy7BNzxEOauJaB5xV\r\n3LjUtmCsxwejdBzfKdUOglCpFS3hIbhjzPXlmUkyWvnuEiJHsCiJun5b/Q5WKm/X\r\nY+esekOucEPMObhhwfHct03bvMAU8rwtNQ6VeoWKHI9wCxIiVFplAa08gUjHAxU7\r\n6bOGLFojJ+s49ah4Yb11tM9Me/2L6s5qqsBosPmRxajnO9HlTnZ5+mZfi4x20DOt\r\nGtYpUWEdrqDBuPtOlB0mJAofXLIVfdvNkbZ+yvI369ERGb8+u7Hy73VwZayXbIij\r\nu1whk7Lg6hOL2XLi0jPza8+O779DzTplcCn0Yjs1myF5t5FFO3uvSDo3cQX5YKBc\r\nmffVRzrUVSt/Tz5DN2FOpph7VBLphfGMMgTAXZIcvIzb8NOydOijEu8ZIhtBCvaN\r\nICArVKdTW4OSrk6At4QOadzuxtWfBg5YwUKejqYGOyeuHPJxBJmrwQuvI7LYwmxB\r\nYdCgGY2QPa5mCVhxykC0sl9qr99D1Ka8Vj2PmsoVLdyE4rwQWvQcM2fxbJu3Oh2U\r\ngyjXT4pcx8+PJDW2Mrsrzjzx9p0Mt6dMFkMcxF6CNQ8zJqlvCqP8dtOid3lhk/n8\r\n59iMPEecV+XPsLtcuRU+uuyEI3Vy8IOrY5IvNIw2FP0gbHAIPKTH6UvXMO0i7UHB\r\n-----END
+      CERTIFICATE-----"
   .properties.server_cert_key:
     value:
       cert_pem: ((properties_server_cert_key.cert_pem))
@@ -44,7 +47,10 @@ resource-config:
       id: automatic
     internet_connected: true
     elb_names:
-    - harbor-infra
+    - alb:infra-harbor-443-tg
+    - alb:infra-harbor-80-tg
+    additional_vm_extensions:
+    - harbor-security-groups
   smoke-testing:
     instances: automatic
     instance_type:
@@ -52,7 +58,7 @@ resource-config:
     internet_connected: false
 errand-config:
   smoke-testing:
-    post-deploy-state: when-changed
+    post-deploy-state: true
   uaa-deregistration:
     pre-delete-state: false
 
