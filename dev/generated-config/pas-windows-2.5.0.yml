@@ -2,8 +2,6 @@ product-name: pas-windows
 product-properties:
   .properties.bosh_ssh_enabled:
     value: true
-  .properties.enable_cf_metric_name:
-    value: false
   .properties.kms:
     value: disable
   .properties.rdp_enabled:
