@@ -15,54 +15,19 @@ product-properties:
   .properties.metrics_polling_interval:
     value: 30
   .properties.multitenant_support:
-    value: enabled
-  .properties.multitenant_support.enabled.broker_operator_set_policy_enabled:
-    value: false
-  .properties.multitenant_support.enabled.disk_alarm_threshold:
-    value: '{mem_relative,1.0}'
-  .properties.multitenant_support.enabled.server_admin_credentials:
-    value:
-      identity: ((properties_multitenant_support_enabled_server_admin_credentials.identity))
-      password: ((properties_multitenant_support_enabled_server_admin_credentials.password))
-  .properties.multitenant_support.enabled.server_cluster_partition_handling:
-    value: pause_minority
-  .properties.multitenant_support.enabled.server_plugins:
-    value:
-    - rabbitmq_management
-  .properties.multitenant_support.enabled.server_ports:
-    value: 15672, 5672, 5671, 1883, 8883, 61613, 61614, 15674
-  .properties.multitenant_support.enabled.server_rsa_certificate:
-    value:
-      cert_pem: ((properties_multitenant_support_enabled_server_rsa_certificate.cert_pem))
-      private_key_pem: ((properties_multitenant_support_enabled_server_rsa_certificate.private_key_pem))
-  .properties.multitenant_support.enabled.server_ssl_fail_if_no_peer_cert:
-    value: false
-  .properties.multitenant_support.enabled.server_ssl_verification_depth:
-    value: 5
-  .properties.multitenant_support.enabled.server_ssl_verify:
-    value: false
-  .properties.multitenant_support.enabled.server_ssl_versions:
-    value:
-    - tlsv1.1
-    - tlsv1.2
+    value: disabled
   .properties.on_demand_broker_plan_1_cf_service_access:
     value: enable
   .properties.on_demand_broker_plan_1_description:
     value: This plan provides a single dedicated RabbitMQ 3.7 node
   .properties.on_demand_broker_plan_1_disk_limit_acknowledgement:
-    value:
-    - acknowledge
+    value: non-existant-value
   .properties.on_demand_broker_plan_1_features:
     value: RabbitMQ 3.7
   .properties.on_demand_broker_plan_1_instance_quota:
     value: 10
   .properties.on_demand_broker_plan_1_name:
     value: single-node-3.7
-  .properties.on_demand_broker_plan_1_rabbitmq_az_placement:
-    value:
-    - us-west-2a
-    - us-west-2b
-    - us-west-2c
   .properties.on_demand_broker_plan_1_rabbitmq_cluster_partition_handling_strategy:
     value: pause_minority
   .properties.on_demand_broker_plan_1_rabbitmq_number_of_nodes:
@@ -76,18 +41,16 @@ product-properties:
   .properties.on_demand_broker_plan_5_selector:
     value: disabled
   .properties.syslog_selector:
-    value: disabled
+    value: enabled
+  .properties.syslog_selector.enabled.syslog_tls:
+    value: false
+  .properties.syslog_selector.enabled.syslog_transport:
+    value: tcp
 network-properties:
-  network:
-    name: pas
-  other_availability_zones:
-  - name: us-west-2a
-  - name: us-west-2b
-  - name: us-west-2c
-  service_network:
-    name: services
-  singleton_availability_zone:
-    name: us-west-2a
+  network: null
+  other_availability_zones: []
+  service_network: null
+  singleton_availability_zone: null
 resource-config:
   on-demand-broker:
     instances: automatic
@@ -97,17 +60,17 @@ resource-config:
       id: automatic
     internet_connected: false
   rabbitmq-broker:
-    instances: automatic
+    instances: 0
     instance_type:
       id: automatic
     internet_connected: false
   rabbitmq-haproxy:
-    instances: automatic
+    instances: 0
     instance_type:
       id: automatic
     internet_connected: false
   rabbitmq-server:
-    instances: automatic
+    instances: 0
     persistent_disk:
       size_mb: automatic
     instance_type:
