@@ -26,7 +26,7 @@ cf:
     blobstore:
       instances: automatic
     compute:
-      instances: 2
+      instances: 6
       additional_networks: []
     control:
       instances: 1
