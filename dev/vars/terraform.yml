@@ -15,4 +15,4 @@ tags:
 - Team: Dev
 vpc_cidr: 10.2.0.0/16
 ops_manager_ami: ""
-ops_manager_private: ""
+ops_manager_private: true
