@@ -14,3 +14,4 @@ ssl_private_key: |
 tags:
 - Team: Dev
 vpc_cidr: 10.2.0.0/16
+ops_manager_ami: ""
